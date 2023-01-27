@@ -202,3 +202,11 @@ export declare class MarketByOrderMessage extends __S {
     toString(): string;
     which(): MarketByOrderMessage_Which;
 }
+export declare class Heartbeat extends __S {
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    toString(): string;
+}

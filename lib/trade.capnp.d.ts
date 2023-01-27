@@ -74,12 +74,14 @@ export declare class ModifyOrder extends __S {
 export declare enum OrderRequest_Which {
     NEW = 0,
     CANCEL = 1,
-    MODIFY = 2
+    MODIFY = 2,
+    HEARTBEAT = 3
 }
 export declare class OrderRequest extends __S {
     static readonly NEW = OrderRequest_Which.NEW;
     static readonly CANCEL = OrderRequest_Which.CANCEL;
     static readonly MODIFY = OrderRequest_Which.MODIFY;
+    static readonly HEARTBEAT = OrderRequest_Which.HEARTBEAT;
     static readonly _capnp: {
         displayName: string;
         id: string;
@@ -106,6 +108,8 @@ export declare class OrderRequest extends __S {
     initModify(): ModifyOrder;
     isModify(): boolean;
     setModify(value: ModifyOrder): void;
+    isHeartbeat(): boolean;
+    setHeartbeat(): void;
     toString(): string;
     which(): OrderRequest_Which;
 }

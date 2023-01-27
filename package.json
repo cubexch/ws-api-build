@@ -10,7 +10,7 @@
     "lib/**/*"
   ],
   "dependencies": {
-    "capnp-ts": "quarkqbe/capnp-ts-build#main",
+    "capnp-ts": "git+https://github.com/quarkqbe/capnp-ts-build.git",
     "debug": "^4.3.4"
   },
   "devDependencies": {
