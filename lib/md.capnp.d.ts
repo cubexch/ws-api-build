@@ -53,6 +53,8 @@ export declare class MarketByPriceDiff_Diff extends __S {
     setPrice(value: bigint): void;
     getQuantity(): bigint;
     setQuantity(value: bigint): void;
+    getSide(): Side;
+    setSide(value: Side): void;
     getOp(): DiffOp;
     setOp(value: DiffOp): void;
     toString(): string;
