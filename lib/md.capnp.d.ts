@@ -204,6 +204,40 @@ export declare class MarketByOrderMessage extends __S {
     toString(): string;
     which(): MarketByOrderMessage_Which;
 }
+export declare class Trades_Trade extends __S {
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    getTradeId(): bigint;
+    setTradeId(value: bigint): void;
+    getPrice(): bigint;
+    setPrice(value: bigint): void;
+    getAggressorSide(): Side;
+    setAggressorSide(value: Side): void;
+    getExchangeOrderId(): bigint;
+    setExchangeOrderId(value: bigint): void;
+    getFillQuantity(): bigint;
+    setFillQuantity(value: bigint): void;
+    toString(): string;
+}
+export declare class Trades extends __S {
+    static readonly Trade: typeof Trades_Trade;
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    static _Trades: capnp.ListCtor<Trades_Trade>;
+    adoptTrades(value: capnp.Orphan<capnp.List<Trades_Trade>>): void;
+    disownTrades(): capnp.Orphan<capnp.List<Trades_Trade>>;
+    getTrades(): capnp.List<Trades_Trade>;
+    hasTrades(): boolean;
+    initTrades(length: number): capnp.List<Trades_Trade>;
+    setTrades(value: capnp.List<Trades_Trade>): void;
+    toString(): string;
+}
 export declare class Heartbeat extends __S {
     static readonly _capnp: {
         displayName: string;
