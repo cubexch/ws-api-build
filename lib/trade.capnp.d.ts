@@ -339,6 +339,10 @@ export declare class RestingOrder extends __S {
     setOriginalQuantity(value: bigint): void;
     getSide(): Side;
     setSide(value: Side): void;
+    getTimeInForce(): TimeInForce;
+    setTimeInForce(value: TimeInForce): void;
+    getOrderType(): OrderType;
+    setOrderType(value: OrderType): void;
     getRemainingQuantity(): bigint;
     setRemainingQuantity(value: bigint): void;
     toString(): string;
