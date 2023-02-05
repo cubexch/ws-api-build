@@ -127,6 +127,18 @@ export declare class NewOrderAck extends __S {
     setRequestId(value: bigint): void;
     getExchangeOrderId(): bigint;
     setExchangeOrderId(value: bigint): void;
+    getMarketId(): bigint;
+    setMarketId(value: bigint): void;
+    getPrice(): bigint;
+    setPrice(value: bigint): void;
+    getQuantity(): bigint;
+    setQuantity(value: bigint): void;
+    getSide(): Side;
+    setSide(value: Side): void;
+    getTimeInForce(): TimeInForce;
+    setTimeInForce(value: TimeInForce): void;
+    getOrderType(): OrderType;
+    setOrderType(value: OrderType): void;
     toString(): string;
 }
 export declare class CancelOrderAck extends __S {
