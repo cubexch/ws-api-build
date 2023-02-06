@@ -220,6 +220,8 @@ export declare class Trades_Trade extends __S {
     setExchangeOrderId(value: bigint): void;
     getFillQuantity(): bigint;
     setFillQuantity(value: bigint): void;
+    getTransactTime(): bigint;
+    setTransactTime(value: bigint): void;
     toString(): string;
 }
 export declare class Trades extends __S {
