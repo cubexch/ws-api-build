@@ -71,6 +71,18 @@ export declare class ModifyOrder extends __S {
     setNewQuantity(value: bigint): void;
     toString(): string;
 }
+export declare class Heartbeat extends __S {
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    getRequestId(): bigint;
+    setRequestId(value: bigint): void;
+    getTimestamp(): bigint;
+    setTimestamp(value: bigint): void;
+    toString(): string;
+}
 export declare enum OrderRequest_Which {
     NEW = 0,
     CANCEL = 1,
@@ -108,8 +120,13 @@ export declare class OrderRequest extends __S {
     initModify(): ModifyOrder;
     isModify(): boolean;
     setModify(value: ModifyOrder): void;
+    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
+    disownHeartbeat(): capnp.Orphan<Heartbeat>;
+    getHeartbeat(): Heartbeat;
+    hasHeartbeat(): boolean;
+    initHeartbeat(): Heartbeat;
     isHeartbeat(): boolean;
-    setHeartbeat(): void;
+    setHeartbeat(value: Heartbeat): void;
     toString(): string;
     which(): OrderRequest_Which;
 }
@@ -256,7 +273,8 @@ export declare enum OrderResponse_Which {
     NEW_REJECT = 3,
     CANCEL_REJECT = 4,
     MODIFY_REJECT = 5,
-    FILL = 6
+    FILL = 6,
+    HEARTBEAT = 7
 }
 export declare class OrderResponse extends __S {
     static readonly NEW_ACK = OrderResponse_Which.NEW_ACK;
@@ -266,6 +284,7 @@ export declare class OrderResponse extends __S {
     static readonly CANCEL_REJECT = OrderResponse_Which.CANCEL_REJECT;
     static readonly MODIFY_REJECT = OrderResponse_Which.MODIFY_REJECT;
     static readonly FILL = OrderResponse_Which.FILL;
+    static readonly HEARTBEAT = OrderResponse_Which.HEARTBEAT;
     static readonly _capnp: {
         displayName: string;
         id: string;
@@ -320,6 +339,13 @@ export declare class OrderResponse extends __S {
     initFill(): Fill;
     isFill(): boolean;
     setFill(value: Fill): void;
+    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
+    disownHeartbeat(): capnp.Orphan<Heartbeat>;
+    getHeartbeat(): Heartbeat;
+    hasHeartbeat(): boolean;
+    initHeartbeat(): Heartbeat;
+    isHeartbeat(): boolean;
+    setHeartbeat(value: Heartbeat): void;
     toString(): string;
     which(): OrderResponse_Which;
 }

@@ -77,11 +77,13 @@ export declare class MarketByPriceDiff extends __S {
 }
 export declare enum MarketByPriceMessage_Which {
     SNAPSHOT = 0,
-    DIFF = 1
+    DIFF = 1,
+    HEARTBEAT = 2
 }
 export declare class MarketByPriceMessage extends __S {
     static readonly SNAPSHOT = MarketByPriceMessage_Which.SNAPSHOT;
     static readonly DIFF = MarketByPriceMessage_Which.DIFF;
+    static readonly HEARTBEAT = MarketByPriceMessage_Which.HEARTBEAT;
     static readonly _capnp: {
         displayName: string;
         id: string;
@@ -101,6 +103,13 @@ export declare class MarketByPriceMessage extends __S {
     initDiff(): MarketByPriceDiff;
     isDiff(): boolean;
     setDiff(value: MarketByPriceDiff): void;
+    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
+    disownHeartbeat(): capnp.Orphan<Heartbeat>;
+    getHeartbeat(): Heartbeat;
+    hasHeartbeat(): boolean;
+    initHeartbeat(): Heartbeat;
+    isHeartbeat(): boolean;
+    setHeartbeat(value: Heartbeat): void;
     toString(): string;
     which(): MarketByPriceMessage_Which;
 }
@@ -177,11 +186,13 @@ export declare class MarketByOrderDiff extends __S {
 }
 export declare enum MarketByOrderMessage_Which {
     SNAPSHOT = 0,
-    DIFF = 1
+    DIFF = 1,
+    HEARTBEAT = 2
 }
 export declare class MarketByOrderMessage extends __S {
     static readonly SNAPSHOT = MarketByOrderMessage_Which.SNAPSHOT;
     static readonly DIFF = MarketByOrderMessage_Which.DIFF;
+    static readonly HEARTBEAT = MarketByOrderMessage_Which.HEARTBEAT;
     static readonly _capnp: {
         displayName: string;
         id: string;
@@ -201,6 +212,13 @@ export declare class MarketByOrderMessage extends __S {
     initDiff(): MarketByOrderDiff;
     isDiff(): boolean;
     setDiff(value: MarketByOrderDiff): void;
+    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
+    disownHeartbeat(): capnp.Orphan<Heartbeat>;
+    getHeartbeat(): Heartbeat;
+    hasHeartbeat(): boolean;
+    initHeartbeat(): Heartbeat;
+    isHeartbeat(): boolean;
+    setHeartbeat(value: Heartbeat): void;
     toString(): string;
     which(): MarketByOrderMessage_Which;
 }
@@ -246,5 +264,9 @@ export declare class Heartbeat extends __S {
         id: string;
         size: capnp.ObjectSize;
     };
+    getRequestId(): bigint;
+    setRequestId(value: bigint): void;
+    getTimestamp(): bigint;
+    setTimestamp(value: bigint): void;
     toString(): string;
 }
