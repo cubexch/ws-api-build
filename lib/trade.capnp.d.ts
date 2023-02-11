@@ -39,6 +39,8 @@ export declare class NewOrder extends __S {
     setTimeInForce(value: TimeInForce): void;
     getOrderType(): OrderType;
     setOrderType(value: OrderType): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class CancelOrder extends __S {
@@ -53,6 +55,8 @@ export declare class CancelOrder extends __S {
     setOrderId(value: bigint): void;
     getRequestId(): bigint;
     setRequestId(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class ModifyOrder extends __S {
@@ -69,6 +73,8 @@ export declare class ModifyOrder extends __S {
     setRequestId(value: bigint): void;
     getNewQuantity(): bigint;
     setNewQuantity(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class Heartbeat extends __S {
@@ -158,6 +164,8 @@ export declare class NewOrderAck extends __S {
     setOrderType(value: OrderType): void;
     getTransactTime(): bigint;
     setTransactTime(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class CancelOrderAck extends __S {
@@ -174,6 +182,8 @@ export declare class CancelOrderAck extends __S {
     setRequestId(value: bigint): void;
     getTransactTime(): bigint;
     setTransactTime(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class ModifyOrderAck extends __S {
@@ -192,6 +202,8 @@ export declare class ModifyOrderAck extends __S {
     setTransactTime(value: bigint): void;
     getNewQuantity(): bigint;
     setNewQuantity(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class NewOrderReject extends __S {
@@ -208,6 +220,8 @@ export declare class NewOrderReject extends __S {
     setRequestId(value: bigint): void;
     getTransactTime(): bigint;
     setTransactTime(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class CancelOrderReject extends __S {
@@ -224,6 +238,8 @@ export declare class CancelOrderReject extends __S {
     setRequestId(value: bigint): void;
     getTransactTime(): bigint;
     setTransactTime(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class ModifyOrderReject extends __S {
@@ -240,6 +256,8 @@ export declare class ModifyOrderReject extends __S {
     setRequestId(value: bigint): void;
     getTransactTime(): bigint;
     setTransactTime(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class Fill extends __S {
@@ -264,6 +282,8 @@ export declare class Fill extends __S {
     setLeavesQuantity(value: bigint): void;
     getTransactTime(): bigint;
     setTransactTime(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare enum OrderResponse_Which {
@@ -389,6 +409,8 @@ export declare class RestingOrder extends __S {
     setRemainingQuantity(value: bigint): void;
     getRestTime(): bigint;
     setRestTime(value: bigint): void;
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
     toString(): string;
 }
 export declare class Done extends __S {
