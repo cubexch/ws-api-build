@@ -258,6 +258,35 @@ export declare class Trades extends __S {
     setTrades(value: capnp.List<Trades_Trade>): void;
     toString(): string;
 }
+export declare enum TradesMessage_Which {
+    HEARTBEAT = 0,
+    TRADES = 1
+}
+export declare class TradesMessage extends __S {
+    static readonly HEARTBEAT = TradesMessage_Which.HEARTBEAT;
+    static readonly TRADES = TradesMessage_Which.TRADES;
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
+    disownHeartbeat(): capnp.Orphan<Heartbeat>;
+    getHeartbeat(): Heartbeat;
+    hasHeartbeat(): boolean;
+    initHeartbeat(): Heartbeat;
+    isHeartbeat(): boolean;
+    setHeartbeat(value: Heartbeat): void;
+    adoptTrades(value: capnp.Orphan<Trades>): void;
+    disownTrades(): capnp.Orphan<Trades>;
+    getTrades(): Trades;
+    hasTrades(): boolean;
+    initTrades(): Trades;
+    isTrades(): boolean;
+    setTrades(value: Trades): void;
+    toString(): string;
+    which(): TradesMessage_Which;
+}
 export declare class Heartbeat extends __S {
     static readonly _capnp: {
         displayName: string;

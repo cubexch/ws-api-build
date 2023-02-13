@@ -206,6 +206,19 @@ export declare class ModifyOrderAck extends __S {
     setSubaccountId(value: bigint): void;
     toString(): string;
 }
+export declare enum NewOrderRejectReason {
+    UNKNOWN = 0,
+    INVALID_QUANTITY = 1,
+    INVALID_MARKET_ID = 2,
+    DUPLICATE_ORDER_ID = 3,
+    INVALID_SIDE = 4,
+    INVALID_TIME_IN_FORCE = 5,
+    INVALID_ORDER_TYPE = 6,
+    INVALID_SELF_TRADE_PREVENTION = 7,
+    UNKNOWN_TRADER = 8,
+    PRICE_WITH_MARKET_ORDER = 9,
+    EXCEEDED_SPOT_POSITION = 10
+}
 export declare class NewOrderReject extends __S {
     static readonly _capnp: {
         displayName: string;
@@ -222,7 +235,14 @@ export declare class NewOrderReject extends __S {
     setTransactTime(value: bigint): void;
     getSubaccountId(): bigint;
     setSubaccountId(value: bigint): void;
+    getReason(): NewOrderRejectReason;
+    setReason(value: NewOrderRejectReason): void;
     toString(): string;
+}
+export declare enum CancelOrderRejectReason {
+    UNKNOWN = 0,
+    INVALID_MARKET_ID = 1,
+    ORDER_NOT_FOUND = 2
 }
 export declare class CancelOrderReject extends __S {
     static readonly _capnp: {
@@ -240,7 +260,18 @@ export declare class CancelOrderReject extends __S {
     setTransactTime(value: bigint): void;
     getSubaccountId(): bigint;
     setSubaccountId(value: bigint): void;
+    getReason(): CancelOrderRejectReason;
+    setReason(value: CancelOrderRejectReason): void;
     toString(): string;
+}
+export declare enum ModifyOrderRejectReason {
+    UNKNOWN = 0,
+    INVALID_QUANTITY = 1,
+    INVALID_MARKET_ID = 2,
+    ORDER_NOT_FOUND = 3,
+    INVALID_IFM = 4,
+    UNKNOWN_TRADER = 5,
+    EXCEEDED_SPOT_POSITION = 6
 }
 export declare class ModifyOrderReject extends __S {
     static readonly _capnp: {
@@ -258,6 +289,8 @@ export declare class ModifyOrderReject extends __S {
     setTransactTime(value: bigint): void;
     getSubaccountId(): bigint;
     setSubaccountId(value: bigint): void;
+    getReason(): ModifyOrderRejectReason;
+    setReason(value: ModifyOrderRejectReason): void;
     toString(): string;
 }
 export declare class Fill extends __S {
