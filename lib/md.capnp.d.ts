@@ -329,3 +329,54 @@ export declare class MdMessage extends __S {
     toString(): string;
     which(): MdMessage_Which;
 }
+export declare class Config extends __S {
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    getMbp(): boolean;
+    setMbp(value: boolean): void;
+    getMbo(): boolean;
+    setMbo(value: boolean): void;
+    getTrades(): boolean;
+    setTrades(value: boolean): void;
+    getSummary(): boolean;
+    setSummary(value: boolean): void;
+    adoptKlines(value: capnp.Orphan<capnp.List<KlineInterval>>): void;
+    disownKlines(): capnp.Orphan<capnp.List<KlineInterval>>;
+    getKlines(): capnp.List<KlineInterval>;
+    hasKlines(): boolean;
+    initKlines(length: number): capnp.List<KlineInterval>;
+    setKlines(value: capnp.List<KlineInterval>): void;
+    toString(): string;
+}
+export declare enum ClientMessage_Which {
+    HEARTBEAT = 0,
+    CONFIG = 1
+}
+export declare class ClientMessage extends __S {
+    static readonly HEARTBEAT = ClientMessage_Which.HEARTBEAT;
+    static readonly CONFIG = ClientMessage_Which.CONFIG;
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
+    disownHeartbeat(): capnp.Orphan<Heartbeat>;
+    getHeartbeat(): Heartbeat;
+    hasHeartbeat(): boolean;
+    initHeartbeat(): Heartbeat;
+    isHeartbeat(): boolean;
+    setHeartbeat(value: Heartbeat): void;
+    adoptConfig(value: capnp.Orphan<Config>): void;
+    disownConfig(): capnp.Orphan<Config>;
+    getConfig(): Config;
+    hasConfig(): boolean;
+    initConfig(): Config;
+    isConfig(): boolean;
+    setConfig(value: Config): void;
+    toString(): string;
+    which(): ClientMessage_Which;
+}
