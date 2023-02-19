@@ -75,44 +75,6 @@ export declare class MarketByPriceDiff extends __S {
     setDiffs(value: capnp.List<MarketByPriceDiff_Diff>): void;
     toString(): string;
 }
-export declare enum MarketByPriceMessage_Which {
-    SNAPSHOT = 0,
-    DIFF = 1,
-    HEARTBEAT = 2
-}
-export declare class MarketByPriceMessage extends __S {
-    static readonly SNAPSHOT = MarketByPriceMessage_Which.SNAPSHOT;
-    static readonly DIFF = MarketByPriceMessage_Which.DIFF;
-    static readonly HEARTBEAT = MarketByPriceMessage_Which.HEARTBEAT;
-    static readonly _capnp: {
-        displayName: string;
-        id: string;
-        size: capnp.ObjectSize;
-    };
-    adoptSnapshot(value: capnp.Orphan<MarketByPrice>): void;
-    disownSnapshot(): capnp.Orphan<MarketByPrice>;
-    getSnapshot(): MarketByPrice;
-    hasSnapshot(): boolean;
-    initSnapshot(): MarketByPrice;
-    isSnapshot(): boolean;
-    setSnapshot(value: MarketByPrice): void;
-    adoptDiff(value: capnp.Orphan<MarketByPriceDiff>): void;
-    disownDiff(): capnp.Orphan<MarketByPriceDiff>;
-    getDiff(): MarketByPriceDiff;
-    hasDiff(): boolean;
-    initDiff(): MarketByPriceDiff;
-    isDiff(): boolean;
-    setDiff(value: MarketByPriceDiff): void;
-    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
-    disownHeartbeat(): capnp.Orphan<Heartbeat>;
-    getHeartbeat(): Heartbeat;
-    hasHeartbeat(): boolean;
-    initHeartbeat(): Heartbeat;
-    isHeartbeat(): boolean;
-    setHeartbeat(value: Heartbeat): void;
-    toString(): string;
-    which(): MarketByPriceMessage_Which;
-}
 export declare class MarketByOrder_Order extends __S {
     static readonly _capnp: {
         displayName: string;
@@ -184,44 +146,6 @@ export declare class MarketByOrderDiff extends __S {
     setDiffs(value: capnp.List<MarketByOrderDiff_Diff>): void;
     toString(): string;
 }
-export declare enum MarketByOrderMessage_Which {
-    SNAPSHOT = 0,
-    DIFF = 1,
-    HEARTBEAT = 2
-}
-export declare class MarketByOrderMessage extends __S {
-    static readonly SNAPSHOT = MarketByOrderMessage_Which.SNAPSHOT;
-    static readonly DIFF = MarketByOrderMessage_Which.DIFF;
-    static readonly HEARTBEAT = MarketByOrderMessage_Which.HEARTBEAT;
-    static readonly _capnp: {
-        displayName: string;
-        id: string;
-        size: capnp.ObjectSize;
-    };
-    adoptSnapshot(value: capnp.Orphan<MarketByOrder>): void;
-    disownSnapshot(): capnp.Orphan<MarketByOrder>;
-    getSnapshot(): MarketByOrder;
-    hasSnapshot(): boolean;
-    initSnapshot(): MarketByOrder;
-    isSnapshot(): boolean;
-    setSnapshot(value: MarketByOrder): void;
-    adoptDiff(value: capnp.Orphan<MarketByOrderDiff>): void;
-    disownDiff(): capnp.Orphan<MarketByOrderDiff>;
-    getDiff(): MarketByOrderDiff;
-    hasDiff(): boolean;
-    initDiff(): MarketByOrderDiff;
-    isDiff(): boolean;
-    setDiff(value: MarketByOrderDiff): void;
-    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
-    disownHeartbeat(): capnp.Orphan<Heartbeat>;
-    getHeartbeat(): Heartbeat;
-    hasHeartbeat(): boolean;
-    initHeartbeat(): Heartbeat;
-    isHeartbeat(): boolean;
-    setHeartbeat(value: Heartbeat): void;
-    toString(): string;
-    which(): MarketByOrderMessage_Which;
-}
 export declare class Trades_Trade extends __S {
     static readonly _capnp: {
         displayName: string;
@@ -258,34 +182,57 @@ export declare class Trades extends __S {
     setTrades(value: capnp.List<Trades_Trade>): void;
     toString(): string;
 }
-export declare enum TradesMessage_Which {
-    HEARTBEAT = 0,
-    TRADES = 1
-}
-export declare class TradesMessage extends __S {
-    static readonly HEARTBEAT = TradesMessage_Which.HEARTBEAT;
-    static readonly TRADES = TradesMessage_Which.TRADES;
+export declare class Summary extends __S {
     static readonly _capnp: {
         displayName: string;
         id: string;
         size: capnp.ObjectSize;
     };
-    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
-    disownHeartbeat(): capnp.Orphan<Heartbeat>;
-    getHeartbeat(): Heartbeat;
-    hasHeartbeat(): boolean;
-    initHeartbeat(): Heartbeat;
-    isHeartbeat(): boolean;
-    setHeartbeat(value: Heartbeat): void;
-    adoptTrades(value: capnp.Orphan<Trades>): void;
-    disownTrades(): capnp.Orphan<Trades>;
-    getTrades(): Trades;
-    hasTrades(): boolean;
-    initTrades(): Trades;
-    isTrades(): boolean;
-    setTrades(value: Trades): void;
+    getLow(): bigint;
+    setLow(value: bigint): void;
+    getHigh(): bigint;
+    setHigh(value: bigint): void;
+    getBaseVolumeLo(): bigint;
+    setBaseVolumeLo(value: bigint): void;
+    getBaseVolumeHi(): bigint;
+    setBaseVolumeHi(value: bigint): void;
+    getQuoteVolumeLo(): bigint;
+    setQuoteVolumeLo(value: bigint): void;
+    getQuoteVolumeHi(): bigint;
+    setQuoteVolumeHi(value: bigint): void;
     toString(): string;
-    which(): TradesMessage_Which;
+}
+export declare enum KlineInterval {
+    S1 = 0,
+    M1 = 1,
+    M15 = 2,
+    H1 = 3,
+    H4 = 4,
+    D1 = 5
+}
+export declare class Kline extends __S {
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    getInterval(): KlineInterval;
+    setInterval(value: KlineInterval): void;
+    getStartTime(): bigint;
+    setStartTime(value: bigint): void;
+    getOpen(): bigint;
+    setOpen(value: bigint): void;
+    getClose(): bigint;
+    setClose(value: bigint): void;
+    getHigh(): bigint;
+    setHigh(value: bigint): void;
+    getLow(): bigint;
+    setLow(value: bigint): void;
+    getVolumeLo(): bigint;
+    setVolumeLo(value: bigint): void;
+    getVolumeHi(): bigint;
+    setVolumeHi(value: bigint): void;
+    toString(): string;
 }
 export declare class Heartbeat extends __S {
     static readonly _capnp: {
@@ -298,4 +245,87 @@ export declare class Heartbeat extends __S {
     getTimestamp(): bigint;
     setTimestamp(value: bigint): void;
     toString(): string;
+}
+export declare enum MdMessage_Which {
+    HEARTBEAT = 0,
+    SUMMARY = 1,
+    TRADES = 2,
+    MBO_SNAPSHOT = 3,
+    MBO_DIFF = 4,
+    MBP_SNAPSHOT = 5,
+    MBP_DIFF = 6,
+    KLINE = 7
+}
+export declare class MdMessage extends __S {
+    static readonly HEARTBEAT = MdMessage_Which.HEARTBEAT;
+    static readonly SUMMARY = MdMessage_Which.SUMMARY;
+    static readonly TRADES = MdMessage_Which.TRADES;
+    static readonly MBO_SNAPSHOT = MdMessage_Which.MBO_SNAPSHOT;
+    static readonly MBO_DIFF = MdMessage_Which.MBO_DIFF;
+    static readonly MBP_SNAPSHOT = MdMessage_Which.MBP_SNAPSHOT;
+    static readonly MBP_DIFF = MdMessage_Which.MBP_DIFF;
+    static readonly KLINE = MdMessage_Which.KLINE;
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    adoptHeartbeat(value: capnp.Orphan<Heartbeat>): void;
+    disownHeartbeat(): capnp.Orphan<Heartbeat>;
+    getHeartbeat(): Heartbeat;
+    hasHeartbeat(): boolean;
+    initHeartbeat(): Heartbeat;
+    isHeartbeat(): boolean;
+    setHeartbeat(value: Heartbeat): void;
+    adoptSummary(value: capnp.Orphan<Summary>): void;
+    disownSummary(): capnp.Orphan<Summary>;
+    getSummary(): Summary;
+    hasSummary(): boolean;
+    initSummary(): Summary;
+    isSummary(): boolean;
+    setSummary(value: Summary): void;
+    adoptTrades(value: capnp.Orphan<Trades>): void;
+    disownTrades(): capnp.Orphan<Trades>;
+    getTrades(): Trades;
+    hasTrades(): boolean;
+    initTrades(): Trades;
+    isTrades(): boolean;
+    setTrades(value: Trades): void;
+    adoptMboSnapshot(value: capnp.Orphan<MarketByOrder>): void;
+    disownMboSnapshot(): capnp.Orphan<MarketByOrder>;
+    getMboSnapshot(): MarketByOrder;
+    hasMboSnapshot(): boolean;
+    initMboSnapshot(): MarketByOrder;
+    isMboSnapshot(): boolean;
+    setMboSnapshot(value: MarketByOrder): void;
+    adoptMboDiff(value: capnp.Orphan<MarketByOrderDiff>): void;
+    disownMboDiff(): capnp.Orphan<MarketByOrderDiff>;
+    getMboDiff(): MarketByOrderDiff;
+    hasMboDiff(): boolean;
+    initMboDiff(): MarketByOrderDiff;
+    isMboDiff(): boolean;
+    setMboDiff(value: MarketByOrderDiff): void;
+    adoptMbpSnapshot(value: capnp.Orphan<MarketByPrice>): void;
+    disownMbpSnapshot(): capnp.Orphan<MarketByPrice>;
+    getMbpSnapshot(): MarketByPrice;
+    hasMbpSnapshot(): boolean;
+    initMbpSnapshot(): MarketByPrice;
+    isMbpSnapshot(): boolean;
+    setMbpSnapshot(value: MarketByPrice): void;
+    adoptMbpDiff(value: capnp.Orphan<MarketByPriceDiff>): void;
+    disownMbpDiff(): capnp.Orphan<MarketByPriceDiff>;
+    getMbpDiff(): MarketByPriceDiff;
+    hasMbpDiff(): boolean;
+    initMbpDiff(): MarketByPriceDiff;
+    isMbpDiff(): boolean;
+    setMbpDiff(value: MarketByPriceDiff): void;
+    adoptKline(value: capnp.Orphan<Kline>): void;
+    disownKline(): capnp.Orphan<Kline>;
+    getKline(): Kline;
+    hasKline(): boolean;
+    initKline(): Kline;
+    isKline(): boolean;
+    setKline(value: Kline): void;
+    toString(): string;
+    which(): MdMessage_Which;
 }
