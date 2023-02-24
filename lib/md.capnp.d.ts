@@ -36,6 +36,10 @@ export declare class MarketByPrice extends __S {
     hasLevels(): boolean;
     initLevels(length: number): capnp.List<MarketByPrice_Level>;
     setLevels(value: capnp.List<MarketByPrice_Level>): void;
+    getChunk(): number;
+    setChunk(value: number): void;
+    getNumChunks(): number;
+    setNumChunks(value: number): void;
     toString(): string;
 }
 export declare enum DiffOp {
@@ -105,6 +109,10 @@ export declare class MarketByOrder extends __S {
     hasOrders(): boolean;
     initOrders(length: number): capnp.List<MarketByOrder_Order>;
     setOrders(value: capnp.List<MarketByOrder_Order>): void;
+    getChunk(): number;
+    setChunk(value: number): void;
+    getNumChunks(): number;
+    setNumChunks(value: number): void;
     toString(): string;
 }
 export declare enum OrderOp {

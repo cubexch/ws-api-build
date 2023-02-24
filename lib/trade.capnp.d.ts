@@ -207,7 +207,7 @@ export declare class ModifyOrderAck extends __S {
     toString(): string;
 }
 export declare enum NewOrderRejectReason {
-    UNKNOWN = 0,
+    UNCLASSIFIED = 0,
     INVALID_QUANTITY = 1,
     INVALID_MARKET_ID = 2,
     DUPLICATE_ORDER_ID = 3,
@@ -240,7 +240,7 @@ export declare class NewOrderReject extends __S {
     toString(): string;
 }
 export declare enum CancelOrderRejectReason {
-    UNKNOWN = 0,
+    UNCLASSIFIED = 0,
     INVALID_MARKET_ID = 1,
     ORDER_NOT_FOUND = 2
 }
@@ -265,7 +265,7 @@ export declare class CancelOrderReject extends __S {
     toString(): string;
 }
 export declare enum ModifyOrderRejectReason {
-    UNKNOWN = 0,
+    UNCLASSIFIED = 0,
     INVALID_QUANTITY = 1,
     INVALID_MARKET_ID = 2,
     ORDER_NOT_FOUND = 3,
@@ -452,8 +452,8 @@ export declare class Done extends __S {
         id: string;
         size: capnp.ObjectSize;
     };
-    getLatestMsgSeqNum(): bigint;
-    setLatestMsgSeqNum(value: bigint): void;
+    getLatestTransactTime(): bigint;
+    setLatestTransactTime(value: bigint): void;
     toString(): string;
 }
 export declare enum Bootstrap_Which {
