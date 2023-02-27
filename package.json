@@ -9,8 +9,8 @@
   "files": [
     "lib/**/*"
   ],
-  "peerDependencies": {
-    "@cube-xyz/capnp-ts": "^0.8.0"
+  "dependencies": {
+    "@cube-xyz/capnp-ts": "^0.9.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
