@@ -1,6 +1,6 @@
 {
-  "name": "cube-ws-api",
-  "version": "0.12.0",
+  "name": "@cube-xyz/client",
+  "version": "0.15.0",
   "scripts": {
     "build": "tsc && cp src/md.capnp* src/trade.capnp* lib/"
   },
@@ -9,9 +9,8 @@
   "files": [
     "lib/**/*"
   ],
-  "dependencies": {
-    "capnp-ts": "git+https://github.com/quarkqbe/capnp-ts-build.git",
-    "debug": "^4.3.4"
+  "peerDependencies": {
+    "@cube-xyz/capnp-ts": "^0.8.0"
   },
   "devDependencies": {
     "@types/debug": "^4.1.7",
