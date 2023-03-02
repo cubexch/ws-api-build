@@ -17,6 +17,22 @@ export declare enum OrderType {
     MARKET_LIMIT = 1,
     MARKET_WITH_PROTECTION = 2
 }
+export declare class RawUnits extends __S {
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    getWord0(): bigint;
+    setWord0(value: bigint): void;
+    getWord1(): bigint;
+    setWord1(value: bigint): void;
+    getWord2(): bigint;
+    setWord2(value: bigint): void;
+    getWord3(): bigint;
+    setWord3(value: bigint): void;
+    toString(): string;
+}
 export declare class NewOrder extends __S {
     static readonly _capnp: {
         displayName: string;
@@ -327,7 +343,8 @@ export declare enum OrderResponse_Which {
     CANCEL_REJECT = 4,
     MODIFY_REJECT = 5,
     FILL = 6,
-    HEARTBEAT = 7
+    HEARTBEAT = 7,
+    POSITION = 8
 }
 export declare class OrderResponse extends __S {
     static readonly NEW_ACK = OrderResponse_Which.NEW_ACK;
@@ -338,6 +355,7 @@ export declare class OrderResponse extends __S {
     static readonly MODIFY_REJECT = OrderResponse_Which.MODIFY_REJECT;
     static readonly FILL = OrderResponse_Which.FILL;
     static readonly HEARTBEAT = OrderResponse_Which.HEARTBEAT;
+    static readonly POSITION = OrderResponse_Which.POSITION;
     static readonly _capnp: {
         displayName: string;
         id: string;
@@ -399,6 +417,13 @@ export declare class OrderResponse extends __S {
     initHeartbeat(): Heartbeat;
     isHeartbeat(): boolean;
     setHeartbeat(value: Heartbeat): void;
+    adoptPosition(value: capnp.Orphan<AssetPosition>): void;
+    disownPosition(): capnp.Orphan<AssetPosition>;
+    getPosition(): AssetPosition;
+    hasPosition(): boolean;
+    initPosition(): AssetPosition;
+    isPosition(): boolean;
+    setPosition(value: AssetPosition): void;
     toString(): string;
     which(): OrderResponse_Which;
 }
@@ -446,6 +471,30 @@ export declare class RestingOrder extends __S {
     setSubaccountId(value: bigint): void;
     toString(): string;
 }
+export declare class AssetPosition extends __S {
+    static readonly _capnp: {
+        displayName: string;
+        id: string;
+        size: capnp.ObjectSize;
+    };
+    getSubaccountId(): bigint;
+    setSubaccountId(value: bigint): void;
+    getAssetId(): bigint;
+    setAssetId(value: bigint): void;
+    adoptTotal(value: capnp.Orphan<RawUnits>): void;
+    disownTotal(): capnp.Orphan<RawUnits>;
+    getTotal(): RawUnits;
+    hasTotal(): boolean;
+    initTotal(): RawUnits;
+    setTotal(value: RawUnits): void;
+    adoptAvailable(value: capnp.Orphan<RawUnits>): void;
+    disownAvailable(): capnp.Orphan<RawUnits>;
+    getAvailable(): RawUnits;
+    hasAvailable(): boolean;
+    initAvailable(): RawUnits;
+    setAvailable(value: RawUnits): void;
+    toString(): string;
+}
 export declare class Done extends __S {
     static readonly _capnp: {
         displayName: string;
@@ -458,11 +507,13 @@ export declare class Done extends __S {
 }
 export declare enum Bootstrap_Which {
     DONE = 0,
-    RESTING = 1
+    RESTING = 1,
+    POSITION = 2
 }
 export declare class Bootstrap extends __S {
     static readonly DONE = Bootstrap_Which.DONE;
     static readonly RESTING = Bootstrap_Which.RESTING;
+    static readonly POSITION = Bootstrap_Which.POSITION;
     static readonly _capnp: {
         displayName: string;
         id: string;
@@ -482,6 +533,13 @@ export declare class Bootstrap extends __S {
     initResting(): RestingOrder;
     isResting(): boolean;
     setResting(value: RestingOrder): void;
+    adoptPosition(value: capnp.Orphan<AssetPosition>): void;
+    disownPosition(): capnp.Orphan<AssetPosition>;
+    getPosition(): AssetPosition;
+    hasPosition(): boolean;
+    initPosition(): AssetPosition;
+    isPosition(): boolean;
+    setPosition(value: AssetPosition): void;
     toString(): string;
     which(): Bootstrap_Which;
 }

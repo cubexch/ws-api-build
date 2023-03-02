@@ -1,6 +1,6 @@
 {
   "name": "@cube-xyz/client",
-  "version": "0.15.2",
+  "version": "0.16.0",
   "scripts": {
     "build": "tsc && cp src/md.capnp* src/trade.capnp* lib/ && find lib\/ -type f -name '*\\.capnp*\\.[tj]s' -exec sed -i '' s\/capnp-ts\/@cube-xyz\\\\\/capnp-ts\/g {} +"
   },
