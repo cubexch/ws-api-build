@@ -361,34 +361,12 @@ export declare class Config extends __S {
     setKlines(value: capnp.List<KlineInterval>): void;
     toString(): string;
 }
-export declare class TopOfBook_Trade extends __S {
-    static readonly _capnp: {
-        displayName: string;
-        id: string;
-        size: capnp.ObjectSize;
-    };
-    getTradeId(): bigint;
-    setTradeId(value: bigint): void;
-    getPrice(): bigint;
-    setPrice(value: bigint): void;
-    getAggressingSide(): Side;
-    setAggressingSide(value: Side): void;
-    getRestingExchangeOrderId(): bigint;
-    setRestingExchangeOrderId(value: bigint): void;
-    getAggressingExchangeOrderId(): bigint;
-    setAggressingExchangeOrderId(value: bigint): void;
-    getFillQuantity(): bigint;
-    setFillQuantity(value: bigint): void;
-    toString(): string;
-}
 export declare class TopOfBook extends __S {
-    static readonly Trade: typeof TopOfBook_Trade;
     static readonly _capnp: {
         displayName: string;
         id: string;
         size: capnp.ObjectSize;
     };
-    static _Trades: capnp.ListCtor<TopOfBook_Trade>;
     getMarketId(): bigint;
     setMarketId(value: bigint): void;
     getTransactTime(): bigint;
@@ -401,12 +379,8 @@ export declare class TopOfBook extends __S {
     setAskPrice(value: bigint): void;
     getAskQuantity(): bigint;
     setAskQuantity(value: bigint): void;
-    adoptTrades(value: capnp.Orphan<capnp.List<TopOfBook_Trade>>): void;
-    disownTrades(): capnp.Orphan<capnp.List<TopOfBook_Trade>>;
-    getTrades(): capnp.List<TopOfBook_Trade>;
-    hasTrades(): boolean;
-    initTrades(length: number): capnp.List<TopOfBook_Trade>;
-    setTrades(value: capnp.List<TopOfBook_Trade>): void;
+    getLastPrice(): bigint;
+    setLastPrice(value: bigint): void;
     toString(): string;
 }
 export declare enum AggMessage_Which {
